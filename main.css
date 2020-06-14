@@ -1,0 +1,25 @@
+main{
+	width: 70%;
+	background-color: white;
+	text-align: center;
+	padding: 15px;
+	margin: auto;
+}
+
+form{
+	margin: auto;
+	display: inline-block;
+	width: 90%;
+	box-shadow: 8px 8px 0px #F7EBE4;
+}
+
+input[type=checkbox]{
+	display:inline;
+}
+
+@media only screen and (max-width: 800px){
+	main{
+		width: 85%;
+		background-color: white;
+	}
+}

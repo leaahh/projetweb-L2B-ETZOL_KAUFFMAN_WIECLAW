@@ -1,0 +1,95 @@
+body{
+	font-family: Verdana, sans-serif;
+}
+
+h1{
+	font-size: x-large;
+}
+
+strong{
+	font-size: medium;
+}
+
+p {
+	text-align: center;
+}
+
+img{
+	top: 15px;
+	width: 35%;
+}
+
+#platsviandes>div,#platspoissons>div,#platsoeufs>div,#platsaccompagnements>div,#platsquiches>div,#platsveggie>div,#platsautres>div,#boissonssmoothies>div,#boissonscocktails>div,#boissonsautres>div,#dessertstartes>div,#dessertsgateaux>div,#dessertsglaces>div,#dessertsveggie>div,#dessertsautres>div,#entreessalades>div,#entreesverrines>div,#entreesveggie>div,#entreesautres>div>img
+{
+  padding: 20px;
+  margin: 30px;
+  
+  width: 85%;
+  display: block;
+  overflow: auto;
+
+  text-align: right;
+}
+
+#platsviandes>div>img,#platspoissons>div>img,#platsoeufs>div>img,#platsaccompagnements>div>img,#platsquiches>div>img,#platsveggie>div>img,#platsautres>div>img,#boissonssmoothies>div>img,#boissonscocktails>div>img,#boissonsautres>div>img,#dessertstartes>div>img,#dessertsgateaux>div>img,#dessertsglaces>div>img,#dessertsveggie>div>img,#dessertsautres>div>img,#entreessalades>div>img,#entreesverrines>div>img,#entreesveggie>div>img,#entreesautres>div>img
+{
+ 	padding: 30px;
+ }
+
+#platsviandes>div:nth-child(2n),#platspoissons>div:nth-child(2n),#platsoeufs>div:nth-child(2n),#platsaccompagnements>div:nth-child(2n),#platsquiches>div:nth-child(2n),#platsveggie>div:nth-child(2n),#platsautres>div:nth-child(2n),#boissonssmoothies>div:nth-child(2n),#boissonscocktails>div:nth-child(2n),#boissonsautres>div:nth-child(2n),#dessertstartes>div:nth-child(2n),#dessertsgateaux>div:nth-child(2n),#dessertsglaces>div:nth-child(2n),#dessertsveggie>div:nth-child(2n),#dessertsautres>div:nth-child(2n),#entreessalades>div:nth-child(2n),#entreesverrines>div:nth-child(2n),#entreesveggie>div:nth-child(2n),#entreesautres>div:nth-child(2n)
+{
+  box-shadow: 10px 8px 8px grey;
+}
+
+#platsviandes>div:nth-child(2n+1),#platspoissons>div:nth-child(2n+1),#platsoeufs>div:nth-child(2n+1),#platsaccompagnements>div:nth-child(2n+1),#platsquiches>div:nth-child(2n+1),#platsveggie>div:nth-child(2n+1),#platsautres>div:nth-child(2n+1),#boissonssmoothies>div:nth-child(2n+1),#boissonscocktails>div:nth-child(2n+1),#boissonsautres>div:nth-child(2n+1),#dessertstartes>div:nth-child(2n+1),#dessertsgateaux>div:nth-child(2n+1),#dessertsglaces>div:nth-child(2n+1),#dessertsveggie>div:nth-child(2n+1),#dessertsautres>div:nth-child(2n+1),#entreessalades>div:nth-child(2n+1),#entreesverrines>div:nth-child(2n+1),#entreesveggie>div:nth-child(2n+1),#entreesautres>div:nth-child(2n+1)
+{
+	box-shadow: -10px 8px 8px grey;
+}
+
+#platsviandes>div>img:nth-child(2n+1),#platspoissons>div>img:nth-child(2n+1),#platsoeufs>div>img:nth-child(2n+1),#platsaccompagnements>div>img:nth-child(2n+1),#platsquiches>div>img:nth-child(2n+1),#platsveggie>div>img:nth-child(2n+1),#platsautres>div>img:nth-child(2n+1),#boissonssmoothies>div>img:nth-child(2n+1),#boissonscocktails>div>img:nth-child(2n+1),#boissonsautres>div>img:nth-child(2n+1),#dessertstartes>div>img:nth-child(2n+1),#dessertsgateaux>div>img:nth-child(2n+1),#dessertsglaces>div>img:nth-child(2n+1),#dessertsveggie>div>img:nth-child(2n+1),#dessertsautres>div>img:nth-child(2n+1),#entreessalades>div>img:nth-child(2n+1),#entreesverrines>div>img:nth-child(2n+1),#entreesveggie>div>img:nth-child(2n+1),#entreesautres>div>img:nth-child(2n+1)
+{
+ 	float: left;
+}
+
+#entrees,#plats, #desserts, #boissons{
+	padding: 20px;
+  margin: 30px;
+  
+  width: 85%;
+  display: block;
+  overflow: auto;
+
+  text-align: right;
+}
+
+#entrees>img,#plats>img, #desserts>img, #boissons>img{
+	padding: 30px;
+}
+
+
+#entrees:nth-child(2n),#plats:nth-child(2n), #desserts:nth-child(2n), #boissons:nth-child(2n){
+	box-shadow: 10px 8px 8px grey;
+}
+
+#entrees:nth-child(2n+1),#plats:nth-child(2n+1), #desserts:nth-child(2n+1), #boissons:nth-child(2n+1){
+	box-shadow: -10px 8px 8px grey;
+}
+
+
+#entrees>img:nth-child(2n+1),#plats>img:nth-child(2n+1), #desserts>img:nth-child(2n+1), #boissons>img:nth-child(2n+1){
+	float: left;
+}
+
+.menuprincipal{
+	width: 90%;
+	font-family: Times New Roman, sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: x-large;
+	border-top:2px solid #40C3F0;
+	border-bottom:2px solid  #40C3F0;
+	box-shadow: 12px -8px #40C3F0;
+
+}
+
+

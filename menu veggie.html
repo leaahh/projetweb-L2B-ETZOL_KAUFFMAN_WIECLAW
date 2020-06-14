@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Du 100 % Veggie - BookCook</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://css.gg/add.css' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="recette au hasard.css">
+	<link rel="stylesheet" type="text/css" href="recettes.css">
+</head>
+
+<style type="text/css">
+	main{
+		width: 70%;
+		background-color: white;
+		text-align: center;
+		padding: 15px;
+		margin: auto;
+	}
+</style>
+
+<body onscroll="scroll()" onload="menurandom(data)">
+	<header id="header">
+		<div class="head">
+			<a href="accueil.html" title="Logo BookCook"><img src="images/logo.png"  id="logo"></a>
+
+			<div class="dropdown" style="float:right;">
+				<button class="dropbtn">&Xi;</button>
+				<nav class="dropdown-content">
+					<ul>
+						<li><a href="accueil.html">Accueil</a></li> 
+						<li><a href="entrees.html">Entrées</a></li> 
+						<li><a href="plats.html">Plats</a></li> 
+						<li><a href="desserts.html">Desserts</a></li> 
+						<li><a href="boissons.html">Boissons</a></li> 
+						<li><a href="menu veggie.html">Du 100 % Veggie</a></li> 
+						<li><a href="menu aléatoire.html">Menu aléatoire</a></li>
+						<li class="li_nav" onclick="open_recipe(),random(data)">&nbsp;&nbsp;&nbsp;Recette au hasard</li>
+						<li><a href="partager mes recettes.html">Partager mes recettes </a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Recette au hasard -->
+	<div id="recipe" class="effet">
+	  	<a class="closebtn" onclick="close_recipe()" >&times;</a>
+	  	<div class="content" id="randomrecipe"></div>
+	</div>
+	<!-- FIN Recette au hasard -->
+
+	<p class="menuprincipal">Un menu 100 % VEGGIE vous est proposé par l'équipe</p>
+		
+	<main>
+		<div id="menu">
+			<div id="entrees"></div>
+			<div id="plats"></div>
+			<div id="desserts"></div>
+			<div id="boissons"></div>
+		</div>
+	</main>
+
+	<footer>
+		<p><a href="qui sommes-nous.html">Qui sommes-nous ?</a></p>
+		<p><a href="informations.html">Informations sur le site</a></p>
+		
+		<a href="https://www.facebook.com/BookCook-100122081750625/" target="_blank" title="Facebook" class="fa fa-facebook"></a>
+		<a href="https://twitter.com/bookcook7" target="_blank" title="Twitter" class="fa fa-twitter"></a>
+		<a href="https://www.instagram.com/bookcookefrei/" target="_blank" title="Instagram" class="fa fa-instagram"></a>
+	</footer>
+
+<script type="text/javascript">
+
+	function scroll(){
+		var header = document.getElementById('header')
+		var stick = header.offsetTop;
+		if (window.pageYOffset != stick) {
+			header.classList.add("stick");
+		}else {
+		    header.classList.remove("stick");
+		}
+	}
+
+	// Recette au hasard -->
+	function open_recipe(){
+	  	document.getElementById("recipe").style.width = "100%";
+	  	document.getElementById("recipe").style.overflow = "auto"
+	}
+
+	function close_recipe(){
+	  	document.getElementById("recipe").style.width = "0%";
+	}
+
+
+var data = [
+[
+"Entrees",
+"Veggie",
+"Salade tomates mozzarella",
+"Préparation : 10 minutes, Pour 4 personnes",
+"4 à 6 tomates, 1 boule de mozzarella, 3 cuillères à soupe de vinaigre balsamique, 6 cuillères à soupe d’huile d’olive, 40 g de roquette, 4 branches de basilic",
+"Lavez et essorez la roquette. Coupez les tomates en rondelles avec un couteau à pain. Les rangez sur une grande assiette. Ajoutez la mozzarella coupée en morceaux et la roquette. Arrosez de vinaigre balsamique et d’huile d’olive, salez et poivrez. Décorez avec le basilic grossièrement haché. Servir à température ambiante.",
+"Imagesrecettes/1.jpg"
+],[
+"Entrees",
+"Veggie",
+"Salade Waldorf",
+"Préparation : 15 minutes, Cuisson : 10 minutes.Pour 4 personnes",
+"2 pommes acidulées ,250 g de yaourt brassé ,60 g de cerneaux de noix ,2 tiges de céleri, 1 cœur de romaine  ,120 g de fromage bleu",
+"Préchauffez le four à 180°C. Torréfiez les noix 10 minutes au four en les retournant. Mélangez le yaourt et le fromage bleu. Ajoutez 4 cuillères à soupe d’huile d’olive et le jus de 1 citron. Poivrez. Émincez le céleri. Coupez les pommes en lamelles. Lavez et essorez la salade. Mélangez la salade, le céleri et les pommes. Versez la sauce et mélangez délicatement.",
+"Imagesrecettes/2.jpg"
+],[
+"Entrees",
+"Veggie",
+"Soupe miso aux soba ",
+"Préparation : 10 minutes, Cuisson : 10 minutes ,Pour 4 personnes ",
+"50 g de pâte miso  ,400 g de nouilles soba  ,2l d’eau  ,Le jus d’un citron vert ,4 cm de gingembre ,1 tige de citronnelle ",
+"Portez à ébullition l’eau. Hachez la citronnelle. Ajoutez le gingembre épluché et haché, la citronnelle et le jus de citron vert. Laissez infuser le mélange pendant 10 minutes à feu très doux. Délayez la pâte miso dans le bouillon. Faites cuire dans le bouillon les nouilles soba, le temps indiqué sur l’emballage. Servez aussitôt. ",
+"Imagesrecettes/11.jpg"
+],
+[
+"Plats",
+"Veggie",
+"Bolognaise Vegan ",
+"Préparation : 5 minutes. Cuisson : 15 minutes. Pour 4 personnes ",
+"250g de spaghetti, 1 oignon, 4 gousses d’ail, 400 g de tomates concassées ,200 g d’haché végétal ,3 brins de thym",
+"Ciseler l’oignon, presser l’ail.Dans une grande sauteuse, mettre les spaghettis, l’oignon, l’ail, la tomate, le thym et le haché végétal. Ajouter 70 cl d’eau et un peu de sel. Poivrez. Portez à ébullition, baissez le feu et cuire 12 minutes en remuant régulièrement. Rectifiez l’assaisonnement si besoin. ",
+"Imagesrecettes/33.jpg"
+],[
+"Plats",
+"Veggie",
+"Steak de céléri-rave sauce aux tomates vertes",
+"Préparation : 10 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"2 petits céléris-raves, 2 tomates vertes ,1 petit piment serrano  ,1 gousses d’ail  ,10 g de coriandre ,1 oignon  ,1 cuillère d’huile d’olive, Huile de coco",
+"Mélangez dans un bol les tomates coupées en morceaux avec le piment, l’ail, la coriandre et l’oignon émincés. Versez l’huile d’olive, assaisonnez, mélangez et réservez. Pelez et coupez les céleris-raves en tranches, salez et poivrez. Préchauffez le gril du four. Dans une poele faites chauffer un peu d’huile de coco et faites cuire les steaks de céleri-rave jusqu’à ce qu’ils dorent, 4 minutes par côté environ. Transférez dans le four pour 5 à 10 minutes jusqu’à ce que les morceaux soient tendres. Servez avec la sauce de tomates vertes.",
+"Imagesrecettes/34.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"Soupe miso aux soba ",
+"Préparation : 10 minutes, Cuisson : 10 minutes, Pour 4 personnes",
+"50 g de pâte miso , 400 g de nouilles soba , 2l d’eau , Le jus d’un citron vert, 4 cm de gingembre , 1 tige de citronnelle",
+"Portez à ébullition l’eau. Hachez la citronnelle. Ajoutez le gingembre épluché et haché, la citronnelle et le jus de citron vert. Laissez infuser le mélange pendant 10 minutes à feu très doux. Délayez la pâte miso dans le bouillon. Faites cuire dans le bouillon les nouilles soba, le temps indiqué sur l’emballage. Servez aussitôt. ",
+"Imagesrecettes/11.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"One-pot pasta aux légumes verts",
+"Préparation : 10 minutes, Cuisson : 3 minutes (hors cuisson des pâtes), Pour 4 personnes ",
+"300g de pâte au quinoa, 300 g d’asperges, 300 g de petits pois, 4 cuillères à soupe d’huile d’olive, 3 cuillères à café de câpres, 10 g de menthe, Sel",
+"Faites bouillir un grand volume d’eau salée pour les pâtes. Pendant ce temps nettoyez et coupez les asperges en trois, retirez les petits pois du congélateur. Émincez la menthe. Versez les pâtes dans l’eau bouillante et 3 minutes avant la fin du temps de cuisson indiqué sur l’emballage, ajoutez les asperges et les petits pois. Faites cuire 3 minutes, égouttez et remettez le tout dans la casserole. Ajoutez l’huile d’olive et parsemez de zestes de citron, de câpres et de menthe ciselée. Assaisonnez, mélangez et servez. ",
+"Imagesrecettes/35.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"Tomates farcies",
+"Préparation : 20 minutes, Cuisson : 1 heure, Pour 4 personnes",
+"8 tomates, 200g de quinoa, 1 oignon, 1 gousse d’ail, 3 brins de thym, 100 g de feta",
+"Rincez le quinoa et faites-le cuire 10 minutes dans de l’eau bouillante. Égouttez. Préchauffez le four à 180°C. Coupez le chapeau des tomates. Les évider. Hachez la chair. Émincer l’oignon. Hachez l’ail. Faites revenir l’oignon et l’ail 5 minutes dans 3 cuillères à soupe d’huile d’olive. Ajoutez la chair des tomates, le thym, salez et poivrez. Faites cuire 10 minutes. Ajoutez la feta. Garnissez les tomates de ce mélange, posez les chapeaux, arrosez d’huile d’olive et enfournez 30-45 minutes.",
+"Imagesrecettes/24.jpg"
+],[
+"Plats",
+"Veggie",
+"Champignons farcis",
+"Préparation : 20 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"20 moyens champignon de Paris, 60 g de noisettes, 60 g de parmesan, 6 brins de persil plat, 2 gousses d’ail, 4 cuillères à soupe d’huile d’olive",
+"Préchauffez le four à 200°C. Nettoyez les champignons, retirez la queue. Hachez les noisettes grossièrement, pressez l’ail, hachez le persil. Mélangez le tout avec l’huile d’olive et le parmesan râpé. Poivrez généreusement. Déposez les champignons sur une plaque, salez légèrement et remplissez la cavité de farce. Enfournez 20 minutes, en surveillant la coloration.",
+"Imagesrecettes/25.jpg"
+], [
+"Plats",
+"Veggie",
+"Chou-fleur rôti",
+"Préparation : 10 minutes, Cuisson : 1h15, Pour 4 personnes",
+"1 ou 2 choux fleurs, 4 gousses d’ail, 4 branches de thym, 1 cuillère à soupe de paprika, 6 cuillères à soupe d’huile d’olive",
+"Retirer les feuilles extérieures du chou-fleur. Lavez le chou-fleur. Écrasez les gousses d’ail avec le paprika et 3 cuillères à soupe d’huile d’olive. Salez et poivrez. Badigeonnez le chou-fleur de cette pâte. Le mettre dans une cocotte, couvrez et faites cuire 1 heure à 180°C. Retirez le couvercle 10 minutes avant la fin de la cuisson. Arrosez d’huile d’olive et servir.",
+"Imagesrecettes/26.jpg"
+], [
+"Plats",
+"Veggie",
+"Carottes rôties à la feta ",
+"Préparation : 25 minutes, Cuisson : 30 minutes, Pour 4 personnes",
+"1 botte de carottes, 4 branches de thym, 4 gousses d’ail, 120 g de feta, 5 brins de coriandre",
+"Préchauffez le four à 180°C. Retirez les fanes des carottes et les gratter. Les rincer et les sécher. Les déposer sur une plaque recouverte de papier sulfurisé avec les gousses d’ail entières non pelées. Arrosez avec 3 cuillères à soupe d’huile d’olive, salez et poivrez. Parsemez le thym. Enfournez 30 minutes environ. Mélanger de temps à autre. Servir avec la feta émiettée et un peu de coriandre hachée.",
+"Imagesrecettes/27.jpg"
+], 
+[
+"Desserts",
+"Veggie",
+"Brownie cru ",
+"Préparation : 10 minutes, Réfrigération : 1 nuit, Pour 4 à 6 personnes",
+"200 g de dattes, 150 g de noix, 90 g d’amandes, 50 g de poudre de cacao cru ",
+"Déposez les noix dans un mixeur et mixez puis ajoutez le cacao, un peu de sel puis les dattes dénoyautées une par une. Transférez dans un moule cette préparation et les amandes grossièrement hachées. Étalez bien en pressant avec les mains. Placez au réfrigérateur pendant une nuit.",
+"Imagesrecettes/46.jpg"
+],
+
+
+[
+"Desserts",
+"Veggie",
+"Mousses de poire au gingembre confit",
+"Préparation : 20 minutes, Réfrigération : 2h minimum, Cuisson : 5 minutes, Pour 4 personnes",
+"2 grosses poires (comices ou williams), Le jus de 1 citron, 2 blancs d’œuf, 1 cuillère à soupe de gingembre confit, 1 cuillère à soupe de gélatine en poudre, 1 pincée de sel, 50 g de sucre en poudre, 50 cl d’eau",
+"Hachez le gingembre confit aussi finement que possible. Lavez et pelez les poires. Coupez-es en quatre. Arrosez-les aussitôt du jus du citron pour éviter que la chair se noircisse.Dans une casserole, mélangez l’eau et le sucre jusqu’à complète dissolution de ce dernier. Portez à ébullition jusqu’à l’obtention d’un sirop, puis plongez-y les quartiers de poire. Laissez cuire 5 min à petits feu : la chair doit rester ferme. Égouttez-les à l’aide d’une écumoire et épongez-les sur du papier absorbant. Mixez les poires encore chaudes en purée. Saupoudrez la gélatine en surface, ajoutez le gingembre confit haché et mélangez bien. Laissez tiédir. Battez les blancs en neige très ferme avec le sel, puis incorporez-les délicatement à la purée de poires, en soulevant la masse de bas en haut. Répartissez la préparation dans 4 coupes et réservez au moins 2h au réfrigérateur avant de servir.",
+"Imagesrecettes/43.jpg"
+], [
+"Boissons",
+"Autres",
+"Boisson pommes et épices",
+"Pour 1 personne",
+"1 pomme, 1 poignée de myrtilles, 1 tasse de lait d’amande, 1 cuillère à soupe d’avoine, 1 cuillère à café de cannelle, 5 noix, 1 cuillère à café de graines de chia, Glace, 1 pincée de muscade",
+"Ajoutez tous les ingrédients sauf la noix de muscade dans votre grand gobelet et mixez pendant 30 secondes. Mélangez avec la muscade. Dégustez !",
+"Imagesrecettes/47.jpg"
+],
+
+
+[
+"Boissons",
+"Cocktails",
+"Le Rock’n’roll",
+"Pour 1 personne",
+"La moitié d’un grand gobelet de chou, 4 brins de persil frais , La moitié concombre, lavé ou pelé, 2 tiges de céleri, coupées, La moitié d’une poire, 1 morceau de racine de gingembre, le zeste retiré, 1 cuillère à soupe de vinaigre de cidre , De l’eau",
+"Ajoutez tous les ingrédients dans le grand gobelet et mixez jusqu’à consistance lisse (environ 45 secondes).",
+"Imagesrecettes/48.jpg"
+],
+
+
+[
+"Boissons",
+"Smoothies",
+"Smoothie aux figues et au beurre d’amande",
+"Préparation : 5 minutes",
+"15 cl de lait d’amande, 4 figues, 1 cuillère à soupe de beurre d’amande, 1 banane, 1 pincée, de cannelle en poudre",
+"Versez dans un Blender le lait d’amande puis déposez la banane coupée en morceaux et les figues lavées. Ajoutez le beurre d’amande puis la cannelle en poudre. Mixez jusqu’à l’obtention d’un liquide homogène.",
+"Imagesrecettes/49.jpg"
+],
+
+
+[
+"Boissons",
+"Smoothies",
+"Smoothie au matcha et au gingembre",
+"Préparation : 5 minutes",
+"1 cuillère à café de thé vert matcha, 2 cm de gingembre, 20 cl de lait d’amande, 30 g d’épinards, 1 banane, Jus de citron",
+"Déposez dans un Blender le thé vert matcha, le lait d’amande, le gingembre râpé, le jus de citron et les épinards. Ajoutez la banane et mixez jusqu’à l’obtention d’un liquide homogène.",
+"Imagesrecettes/50.jpg"
+]
+];
+
+	function remove(){
+		var div = document.getElementById('randomrecipe')
+		while (div.hasChildNodes()) {
+			div.removeChild(div.lastChild);
+		}
+	}
+
+	function random(data){
+		remove()
+		var randomrecipe = document.getElementById("randomrecipe")
+		var random = Math.floor(Math.random()*(data.length))
+
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    randomrecipe.appendChild(img)		
+
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		randomrecipe.appendChild(h1)
+		randomrecipe.appendChild(strong)
+		randomrecipe.appendChild(p1)
+		randomrecipe.appendChild(p2)
+	}
+	
+	function entreesrandom(data){
+		
+		var entrees = document.getElementById('entrees')
+
+		do{
+			var random = Math.floor(Math.random()*(data.length))
+		}while (data[random][0]!='Entrees');
+		
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    entrees.appendChild(img)
+
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		entrees.appendChild(h1)
+		entrees.appendChild(strong)
+		entrees.appendChild(p1)
+		entrees.appendChild(p2)
+	}
+
+	function platsrandom(data){
+		var plats = document.getElementById('plats')
+
+		do{
+			var random = Math.floor(Math.random()*(data.length))
+		}while (data[random][0]!='Plats');
+		
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    plats.appendChild(img)
+
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		plats.appendChild(h1)
+		plats.appendChild(strong)
+		plats.appendChild(p1)
+		plats.appendChild(p2)
+	}
+
+	function dessertsrandom(data){
+		var desserts = document.getElementById('desserts')
+
+		do{
+			var random = Math.floor(Math.random()*(data.length))
+		}while (data[random][0]!='Desserts');
+		
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    desserts.appendChild(img)
+		
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		desserts.appendChild(h1)
+		desserts.appendChild(strong)
+		desserts.appendChild(p1)
+		desserts.appendChild(p2)
+	}
+
+	function boissonsrandom(data){
+		var boissons = document.getElementById('boissons')
+
+		do{
+			var random = Math.floor(Math.random()*(data.length))
+		}while (data[random][0]!='Boissons');
+		
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    boissons.appendChild(img)
+		
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		boissons.appendChild(h1)
+		boissons.appendChild(strong)
+		boissons.appendChild(p1)
+		boissons.appendChild(p2)
+	}
+
+	function menurandom(data){
+		entreesrandom(data)
+		platsrandom(data)
+		dessertsrandom(data)
+		boissonsrandom(data)
+	}
+
+</script>
+</body>
+</html>

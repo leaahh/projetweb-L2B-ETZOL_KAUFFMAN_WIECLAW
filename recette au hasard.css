@@ -1,0 +1,53 @@
+.effet {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #D6FFEF;
+  opacity: 0.9;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.content {
+  border:2px solid black;
+  position: relative;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  width: 80%;
+  margin: auto;
+  display: block;
+  margin: 70px;
+  padding-top: 100px;
+  padding-bottom: 145px;
+  overflow: auto;
+}
+
+.content>img{
+  float: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+
+
+.effet a {
+  text-decoration: none;
+  padding: 10px;
+  font-size: large;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.effet .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+}

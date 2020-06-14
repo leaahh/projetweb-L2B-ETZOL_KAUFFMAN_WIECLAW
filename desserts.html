@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desserts - BookCook</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://css.gg/add.css' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="recette au hasard.css">
+	<link rel="stylesheet" type="text/css" href="recettes.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body onscroll="scroll()" onload="affichage_recipes(data)">
+	<header id="header">
+		<div class="head">
+			<a href="accueil.html" title="Logo BookCook"><img src="images/logo.png"  id="logo"></a>
+
+			<div class="dropdown" style="float:right;">
+				<button class="dropbtn">&Xi;</button>
+				<nav class="dropdown-content">
+					<ul>
+						<li><a href="accueil.html">Accueil</a></li> 
+						<li><a href="entrees.html">Entrées</a></li> 
+						<li><a href="plats.html">Plats</a></li> 
+						<li><a href="desserts.html">Desserts</a></li> 
+						<li><a href="boissons.html">Boissons</a></li> 
+						<li><a href="menu veggie.html">Du 100 % Veggie</a></li> 
+						<li><a href="menu aléatoire.html">Menu aléatoire</a></li>
+						<li class="li_nav" onclick="open_recipe(),random(data)">&nbsp;&nbsp;&nbsp;Recette au hasard</li>
+						<li><a href="partager mes recettes.html">Partager mes recettes </a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Recette au hasard -->
+		<div id="recipe" class="effet">
+		  	<a class="closebtn" onclick="close_recipe()" >&times;</a>
+		  	<div class="content" id="randomrecipe"></div>
+		</div>
+		<!-- FIN Recette au hasard -->
+		<br>
+		<img src="images/bannieredesserts.jpg" alt="Bannière desserts" title="Bannière desserts" class="bannieres"><br><br>
+
+	<main>
+		<form>
+			<fieldset>
+				<legend>Filtrer par catégorie</legend>
+				<input type="checkbox" id="tartesdesserts" name="tartesdesserts" value="tartesdesserts" onchange="filterbyCheckbox('tartesdesserts','gateauxdesserts','glacesdesserts','veggiedesserts','autresdesserts')">
+				<label for="tartesdesserts">Tartes</label>
+
+				<input type="checkbox" id="gateauxdesserts" name="gateauxdesserts" value="gateauxdesserts" onchange="filterbyCheckbox('tartesdesserts','gateauxdesserts','glacesdesserts','veggiedesserts','autresdesserts')">
+				<label for="gateauxdesserts">Gâteaux</label>
+
+				<input type="checkbox" id="glacesdesserts" name="glacesdesserts" value="glacesdesserts" onchange="filterbyCheckbox('tartesdesserts','gateauxdesserts','glacesdesserts','veggiedesserts','autresdesserts')">
+				<label for="glacesdesserts">Glaces et Sorbets</label>
+
+				<input type="checkbox" id="veggiedesserts" name="veggiedesserts" value="veggiedesserts" onchange="filterbyCheckbox('tartesdesserts','gateauxdesserts','glacesdesserts','veggiedesserts','autresdesserts')">
+				<label for="autresdesserts">Veggie</label>
+
+				<input type="checkbox" id="autresdesserts" name="autresdesserts" value="autresdesserts" onchange="filterbyCheckbox('tartesdesserts','gateauxdesserts','glacesdesserts','veggiedesserts','autresdesserts')">
+				<label for="autresdesserts">Autres</label><br><br>
+			
+				<input type="submit" value="Enlever le filtre"  id="submitbox" /><br>
+
+			</fieldset>
+		</form><br><br><br>
+
+		<div id="recipelist">
+			<div id="dessertstartes"></div>
+			<div id="dessertsgateaux"></div>
+			<div id="dessertsglaces"></div>
+			<div id="dessertsveggie"></div>
+			<div id="dessertsautres"></div>
+		</div>
+	</main>
+
+	<footer>
+		<p><a href="qui sommes-nous.html">Qui sommes-nous ?</a></p>
+		<p><a href="informations.html">Informations sur le site</a></p>
+		
+		<a href="https://www.facebook.com/BookCook-100122081750625/" target="_blank" title="Facebook" class="fa fa-facebook"></a>
+		<a href="https://twitter.com/bookcook7" target="_blank" title="Twitter" class="fa fa-twitter"></a>
+		<a href="https://www.instagram.com/bookcookefrei/" target="_blank" title="Instagram" class="fa fa-instagram"></a>
+	</footer>
+
+<script type="text/javascript">
+
+	function scroll(){
+		var header = document.getElementById('header')
+		var stick = header.offsetTop;
+		if (window.pageYOffset != stick) {
+			header.classList.add("stick");
+		}else {
+		    header.classList.remove("stick");
+		}
+	}
+
+	// Recette au hasard -->
+	function open_recipe(){
+	  	document.getElementById("recipe").style.width = "100%";
+	  	document.getElementById("recipe").style.overflow = "auto"
+	}
+
+	function close_recipe(){
+	  	document.getElementById("recipe").style.width = "0%";
+	}
+	// Recette au hasard -->
+
+	//////////////////////////////////////////////////////
+
+
+var data = [
+[
+"Entrees",
+"Salades",
+"Salade tomates mozzarella",
+"Préparation : 10 minutes, Pour 4 personnes",
+"4 à 6 tomates, 1 boule de mozzarella, 3 cuillères à soupe de vinaigre balsamique, 6 cuillères à soupe d’huile d’olive, 40 g de roquette, 4 branches de basilic",
+"Lavez et essorez la roquette. Coupez les tomates en rondelles avec un couteau à pain. Les rangez sur une grande assiette. Ajoutez la mozzarella coupée en morceaux et la roquette. Arrosez de vinaigre balsamique et d’huile d’olive, salez et poivrez. Décorez avec le basilic grossièrement haché. Servir à température ambiante.",
+"Imagesrecettes/1.jpg"
+], 
+[
+"Entrees",
+"Salades",
+"Salade Waldorf",
+"Préparation : 15 minutes, Cuisson : 10 minutes, Pour 4 personnes",
+"2 pommes acidulées, 250 g de yaourt brassé, 60 g de cerneaux de noix, 2 tiges de céleri, 1 cœur de romaine, 120 g de fromage bleu",
+"Préchauffez le four à 180°C. Torréfiez les noix 10 minutes au four en les retournant. Mélangez le yaourt et le fromage bleu. Ajoutez 4 cuillères à soupe d’huile d’olive et le jus de 1 citron. Poivrez. Émincez le céleri. Coupez les pommes en lamelles. Lavez et essorez la salade. Mélangez la salade, le céleri et les pommes. Versez la sauce et mélangez délicatement.",
+"Imagesrecettes/2.jpg"
+],[
+"Entrees",
+"Salade",
+"Salade pommes de terre-moules",
+"Préparation : 5 min, Cuisson : 20-30 minutes, Pour 4 personnes",
+"3 pommes de terre, 20 cl de lait de coco, 300 g de moules cuites et décortiquées, 2 bottes de coriandre",
+"Faites cuire les pommes de terre avec la peau de 20 à 30 minutes dans de l’eau bouillante salée. Epluchez-les et découpez-les en morceaux. Mélangez-les avec les moules et le lait de coco. Salez et poivrez. Ajoutez la coriandre coupée grossièrement. Dégustez tiède ou froid avec un filet d’huile d’olive.",
+"Imagesrecettes/3.jpg"
+],[
+"Entrees",
+"Salades",
+"Salade de bœuf aux échalotes",
+"Pour 4 personnes, Préparation : 15 minutes",
+"4 portions de carpaccio de bœuf, 6 cuillères à soupe d’échalotes frites, 300 g de salade Iceberg, 8 cuillères à soupe de sauce soja, 1 cuillère à café d’ail semoule",
+"Préchauffez le four à 180°C. Déposez les carpaccios dans un plat, ajoutez l’ail et la sauce soja. Enfournez 2 minutes. Déposez sur la salade lavée et émincée, saupoudrez d’échalotes frites et dégustez immédiatement avec un filet d’huile d’olive.",
+"Imagesrecettes/4.jpg"
+],[
+"Entrees",
+"Verrines",
+"Verrines de truite fumée au fromage frais épicé",
+"Préparation : 15 minutes, Pour 4 personnes",
+"200 g de fromage frais, 2 cuillères à soupe de mayonnaise, 1 cuillère à café de curry, 1 petit bouquet de fines herbes, 1 cuillère à soupe d’huile d’olive, 8 mini-blinis, 4 tranches de truite fumée, 1 citron vert, 1 petit pot d’œufs de lump",
+"Pressez le jus du citron vert. Hachez finement l’équivalent d’une cuillerée à soupe de fines herbes. Dans un saladier, mélangez le fromage frais avec la mayonnaise, le curry, l’huile d’olive, les fines herbes et le sel fin. Roulez puis émincez finement les tranches de truite fumée. Versez par-dessus quelques gouttes de citron vert. Déposez au fond de 4 verrines un mini-blinis, de la truite fumée émincée et citronnée, puis une couche de fromage frais épicé. Disposez de nouveau par-dessus ces trois mêmes couches. Décorez avec des œufs de lump rouges et des fines herbes. Réservez les verrines au frais.",
+"Imagesrecettes/5.jpg"
+],[
+"Entrees",
+"Verrines",
+"Verrines de courgettes",
+"Préparation : 15 minutes, Réfrigération : 30 minutes, Pour 4 personnes",
+"2 courgettes bien fermes, 12 petites billes de mozzarella, 12 tomates cerises, 2 cœurs d’artichaut à l’huile, 3 cuillères à soupe d’huile d’olive, 1 cuillère à soupe de vinaigre, Quelques olives noires, 1 cuillères à soupe de câpres",
+"Egouttez les cœurs d’artichaut, puis taillez-les en petits dés. Lavez puis râpez en gros filaments les 2 courgettes. Coupez les tomates cerises en quatre. Préparez la vinaigrette en mélangeant l’huile d’olive avec le vinaigre balsamique blanc et le sel fin dans un bol. Hachez grossièrement les olives. Mélangez dans un saladier les courgettes avec les tomates cerises, les billes de mozzarella, les petits dés d’artichaut, les olives et les câpres. Répartissez le tout dans 4 verres. Assaisonnez de vinaigrette. Laissez reposer au frais pendant 30 minutes. Décorez avec des feuilles de basilic.",
+"Imagesrecettes/6.jpg"
+],[
+"Entrees",
+"Autres",
+"Lentille et œuf poché ",
+"Préparation : 20 minutes, Cuisson : 25 minutes, Pour 4 personnes",
+"150 g de lentilles du Puy, 1 bouquet garni, 1 cuillère à café de miel, 4 œufs, 1 échalote, 1 cuillère à café de moutarde de Dijon",
+"Faire cuire les lentilles 25 minutes dans 1 litre d’eau avec le bouquet garni. Égouttez-les. Hachez l’échalote. Mélangez la moutarde, le miel, 6 cuillères à soupe d’huile d’olive, 2 cuillères à soupe de vinaigre et l’échalote, salez et poivrez. Versez sur les lentilles et mélangez. Portez une casserole d’eau à ébullition. Saler et ajouter deux cuillères à soupe de vinaigre. Faire un tourbillon puis verser les œufs un à un pour les pocher (3-4 minutes). Égouttez. Servir les œufs pochés sur la salade de lentilles.",
+"Imagesrecettes/8.jpg"
+],[
+"Entrees",
+"Autres",
+"Poireaux vinaigrette",
+"Préparation : 10 minutes, Cuisson : 25 minutes, Pour 4 personnes",
+"6 poireaux, 2 brins de persil plat, 1 échalote, 3 cuillères à soupe de vinaigre de vin rouge, 1 cuillère à café de moutarde, 6 cuillères à soupe d’huile d’olive",
+"Coupez le vert des poireaux et le jeter. Coupez les blancs en deux dans le sens de la longueur, puis de nouveaux en deux, puis les laver soigneusement. Les faire cuire à la vapeur 20 à 30 minutes. Ciseler l’échalote. Mélanger la moutarde, l’échalote, le vinaigre et l’huile d’olive. Hacher le persil. Répartir les poireaux dans 4 assiettes, arroser de vinaigrette, parsemer de persil et servir avec des copeaux de parmesan.",
+"Imagesrecettes/9.jpg"
+],[
+"Entrees",
+"Veggie",
+"Salade tomates mozzarella",
+"Préparation : 10 minutes, Pour 4 personnes",
+"4 à 6 tomates, 1 boule de mozzarella, 3 cuillères à soupe de vinaigre balsamique, 6 cuillères à soupe d’huile d’olive, 40 g de roquette, 4 branches de basilic",
+"Lavez et essorez la roquette. Coupez les tomates en rondelles avec un couteau à pain. Les rangez sur une grande assiette. Ajoutez la mozzarella coupée en morceaux et la roquette. Arrosez de vinaigre balsamique et d’huile d’olive, salez et poivrez. Décorez avec le basilic grossièrement haché. Servir à température ambiante.",
+"Imagesrecettes/1.jpg"
+],[
+"Entrees",
+"Veggie",
+"Salade Waldorf",
+"Préparation : 15 minutes, Cuisson : 10 minutes.Pour 4 personnes",
+"2 pommes acidulées ,250 g de yaourt brassé ,60 g de cerneaux de noix ,2 tiges de céleri, 1 cœur de romaine  ,120 g de fromage bleu",
+"Préchauffez le four à 180°C. Torréfiez les noix 10 minutes au four en les retournant. Mélangez le yaourt et le fromage bleu. Ajoutez 4 cuillères à soupe d’huile d’olive et le jus de 1 citron. Poivrez. Émincez le céleri. Coupez les pommes en lamelles. Lavez et essorez la salade. Mélangez la salade, le céleri et les pommes. Versez la sauce et mélangez délicatement.",
+"Imagesrecettes/2.jpg"
+],[
+"Entrees",
+"Veggie",
+"Soupe miso aux soba ",
+"Préparation : 10 minutes, Cuisson : 10 minutes ,Pour 4 personnes ",
+"50 g de pâte miso  ,400 g de nouilles soba  ,2l d’eau  ,Le jus d’un citron vert ,4 cm de gingembre ,1 tige de citronnelle ",
+"Portez à ébullition l’eau. Hachez la citronnelle. Ajoutez le gingembre épluché et haché, la citronnelle et le jus de citron vert. Laissez infuser le mélange pendant 10 minutes à feu très doux. Délayez la pâte miso dans le bouillon. Faites cuire dans le bouillon les nouilles soba, le temps indiqué sur l’emballage. Servez aussitôt. ",
+"Imagesrecettes/11.jpg"
+],[
+"Plats",
+"Viandes",
+"Poulet rôti aux légumes",
+"Prêt en 15 minutes, 1 heure de cuisson, Pour 4 personnes",
+"4 cuisses de poulet, 2 courgettes, 4 tomates, 1 poivron, 3 branches de thym, 4 branches de basilic",
+"Préchauffer le four à 180°C. Laver les légumes, les couper en morceaux. Saler et poivrer les cuisses de poulet et les légumes. Mettre le tout dans un plat à four, arroser de 4 cuillères à soupe d’huile d’olive, ajouter le thym. Enfourner 1 heure. Arroser avec un peu d’eau en cours de cuisson si nécessaire. Servir avec du basilic.",
+"Imagesrecettes/12.jpg"
+],
+
+
+
+[
+"Plats",
+"Viandes",
+"Poulet sauce barbecue ",
+"Prêt en 15 minutes, 45 minutes de cuisson, Pour 4 personnes",
+"4 cuisses de poulet, 200g de sauce barbecue, 600g de patate douce, 2 oignons rouges, 1 poivron rouge",
+"Préchauffer le four à 190°C. Couper les patates douces en rondelles de 2,5 cm. Couper les cuisses de poulet en deux. Entailler la chair et enrober de sauce barbecue. Ajouter les oignons et le poivron émincés. Mélanger bien. Verser tous les ingrédients avec la sauce dans un sac cuisson spécial four. Refermer selon les instructions du paquet. Enfourner pour 45 minutes.",
+"Imagesrecettes/13.jpg"
+],
+
+
+
+[
+"Plats",
+"Viandes",
+"Steak grillé moutarde ",
+"Prêt en 10 minutes, 5 minutes de cuisson, Pour 4 personnes",
+"4 steaks de 200g, 2 brins de thym, 4 pincées de piment d’Espelette, 4 branches de persil plat, 40 g de beurre salé, 2 cuillères à soupe de moutarde.",
+"Salez et poivrez les steaks, ajouter le piment. Faites chauffer le beurre dans une poêle et saisir les steaks 2-3 minutes de chaque côté à feu vif avec le thym en les arrosant de beurre de cuisson puis ajouter la moutarde. Hacher grossièrement le persil et en parsemer les steaks. Server! ",
+"Imagesrecettes/14.jpg"
+],
+
+
+
+[
+"Plats",
+"Viandes",
+"Escalope aux champignons ",
+"Préparation : 20 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"4 escalopes de dindes, 500 g de champignons de Paris, 1 botte d’estragon, 50 cl de crème allégée, 4 cuillères à soupe de sauce soja",
+"Saisissez les escalopes dans une poêle avec 1 filet d’huile d’olive. Ajoutez la sauce soja, les champignons émincés et la crème. Laissez cuire 20 min à feux doux en remuant. Salez, poivrez. Ajoutez l’estragon haché, mélangez et servez.",
+"Imagesrecettes/15.jpg"
+],
+
+
+[
+"Plats",
+"Viandes",
+"Rôti de bœuf ",
+"Prêt en 10 minutes, 45 minutes de cuisson, Pour 8 personnes",
+"1,5 kg de rosbif, 1 tête d’ail, 2 oignons, 5 brins de thym, 3 feuilles laurier, 4 cuillerées à soupe d’huile neutre",
+"Préchauffer le four à 150°C. Émincer les oignons. Chauffer la moitié de l’huile dans une poêle. Assaisonner généreusement le rôti et le saisir 2 minutes sur toutes les faces. Réserver. Jeter l’huile utilisée. Faire revenir les oignons et les gousses d’ail 5 minutes dans l’huile restante. Verser tous les ingrédients dans un sac cuisson spécial four. Enfourner 30 minutes. Laisser reposer 10 minutes avant de couper le rôti.",
+"Imagesrecettes/16.jpg"
+], [
+"Plats",
+"Viandes",
+"Rôti de porc laqué",
+"Préparation : 10 minutes, Cuisson : 1 heure, Pour 4 personnes",
+"1 kg de rôti de porc, 4 gousses d’ail, 12 cl de sauce teriyaki",
+"Préchauffez le four à 180°C. Couper les gousses d’ail en 4. Incisez le rôti de porc et glisser l’ail. Enfournez le rôti de porc 30 minutes puis le badigeonner de sauce et poursuivre la cuisson 30 minutes environ. Badigeonner régulièrement le rôti de sauce jusqu’à ce qu’il soit laqué.",
+"Imagesrecettes/17.jpg"
+],
+
+
+[
+"Plats",
+"Oeufs",
+"Oeufs cocotte au saumon et sésame doré",
+"Préparation : 10 min, Cuisson : 10 min, Pour 4 personnes",
+"Ingrédients : 8 oeufs très frais, 100g de saumon fumé, 8 cuillères à café de crème épaisse, 20g de sésame doré, sel et poivre",
+"Préchauffez le four à 180°C. Versez un fond d'eau dans un grand plat pouvant contenir 8 ramequins. Placez le plat dans le four. Découpez le saumon en fins morceaux. Cassez 1 oeufs dans chaque ramequin. Ajoutez 1 cuillerée à café de crème et un peu de saumon fumé; Salez et poivrez. Disposez les ramequins dans le plat contenant l'eau et faites cuire au four 10 minutes. Saupoudrez de sésame doré et dégustez avec une tranche de pain complet et une salade.",
+"Imagesrecettes/18.jpg"
+],
+
+[
+"Plats",
+"Oeufs",
+"Oeufs brouillés parmesan",
+"Préparation : 10 minutes, cuisson : 10 minutes, Pour 4 personnes",
+"6 oeufs, 3 cuillères à soupe de fromage blanc, 30g de parmesan râpé, 1 bouquet de ciboulette haché, 1 cuillère à café d'huile d'olive, 1 cuillère à café de graines de pavot bleu",
+"Battez les oeufs, ajoutez le fromage blanc, le parmesan râpé et la ciboulette. Salez modérément et poivrez. Faites chauffer l'huile dans une casserole. Versez les oeufs et faites cuire à feu doux en remuant avec une spatule. Quand les oeufs épaississent, retirez du feu. Répartissez dans 4 ramequins, décorez avec des copeaux de parmesan et le pavot bleu.",
+"Imagesrecettes/19.jpg"
+],
+
+
+[
+"Plats",
+"Poissons",
+"Cabillaud en papillote",
+"Préparation : 10 minutes, Cuisson : 10 minutes, Pour 4 personnes",
+"4 pavés de cabillaud, 400 g de poids gourmands, 3 brins de persil plat, 4 cuillères à soupe d’huile d’olive, 2 brins de thym",
+"Préchauffez le four à 180°C. Préparez les légumes et les faire blanchir dans une casserole d’eau bouillante salée. Les égoutter. Découpez 4 carrés de papier sulfurise. Posez les légumes puis le poisson. Salez et poivrez et saupoudrez de thym. Arrosez d’huile d’olive, refermez les papillotes et enfournez 10-15 minutes selon la cuisson souhaitée. Ouvrir les papillotes et parsemez de persil haché.",
+"Imagesrecettes/20.jpg"
+],[
+"Plats",
+"Poissons",
+"Saumon aux épinards ",
+"Préparation : 10 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"4 pavés de saumon de 180g, 400g d’épinards, 2 échalotes, 15 cl de vin blanc, 40 cl de crème épaisse",
+"Coupez 4 rectangles de papier sulfurisé. Préchauffez le four à 200°C.Émincez les échalotes et les faire réduire à sec dans une casserole avec le vin. Ajoutez la crème, assaisonnez, faire réduire de moitié. Fermez en pliant bien les bords. Enfournez 10 minutes.",
+"Imagesrecettes/21.jpg"
+],
+
+
+
+[
+"Plats",
+"Poissons",
+"Crevette curry coco",
+"Préparation : 10 minutes, Cuisson : 11 minutes, Pour 4 personnes",
+"500 g de crevettes décortiquées, 30 g de pâte de curry rouge, 2 œufs, 1 cuillère à café de sucre, 150 g d’haricots verts, 20 cl de lait de coco",
+"Coupez 4 rectangles de papier sulfurisé. Blanchir les haricots 3 minutes dans de l’eau bouillante salée. Les égoutter et les émincer finement en rondelles. Mélangez au fouet, le curry, le lait de coco, le sucre et les œufs. Salez généreusement. Ajoutez les crevettes et les haricots, mélangez bien. Versez sur les papillotes, refermez-en aumônière avec une ficelle sans trop chevaucher les crevettes. Cuire 8 minutes à la vapeur.",
+"Imagesrecettes/22.jpg"
+],
+
+
+
+[
+"Plats",
+"Accompagnements",
+"Gratins dauphinois",
+"Préparation : 30 minutes, Cuisson : 1 heure, Pour 4 personnes",
+"1,2 kg de pommes de terre, 50 cl de crème liquide, 30g de beurre, 20cl de lait, 2 gousses d'ail",
+"Préchauffez le four à 210°C. Pelez les pommes de terre, les laver et les essuyer. Les détaillez en tranches fines à la mandoline. Pelez l’ail et le dégermez. Frottez un plat à gratin avec 1 gousse d’ail, puis beurrez le. Faites chauffer la crème et le lait avec la 2e gousse d’ail et laissez infuser 10 minutes. Retirez l’ail. Rangez les pommes de terre dans le plat à gratin. Salez et poivrez au fur et à mesure. Versez le mélange lait-crème. Enfournez 1 heure, jusqu’à ce que le gratin soit doré et les pommes de terre tendres.",
+"Imagesrecettes/23.jpg"
+],
+
+
+
+[
+"Plats",
+"Accompagnements",
+"Tomates farcies",
+"Préparation : 20 minutes, Cuisson : 1 heure, Pour 4 personnes",
+"8 tomates, 200g de quinoa, 1 oignon, 1 gousse d’ail, 3 brins de thym, 100 g de feta",
+"Rincez le quinoa et faites-le cuire 10 minutes dans de l’eau bouillante. Égouttez. Préchauffez le four à 180°C. Coupez le chapeau des tomates. Les évider. Hachez la chair. Émincer l’oignon. Hachez l’ail. Faites revenir l’oignon et l’ail 5 minutes dans 3 cuillères à soupe d’huile d’olive. Ajoutez la chair des tomates, le thym, salez et poivrez. Faites cuire 10 minutes. Ajoutez la feta. Garnissez les tomates de ce mélange, posez les chapeaux, arrosez d’huile d’olive et enfournez 30-45 minutes.",
+"Imagesrecettes/24.jpg"
+],[
+"Plats",
+"Accompagnements",
+"Champignons farcis",
+"Préparation : 20 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"20 moyens champignon de Paris, 60 g de noisettes, 60 g de parmesan, 6 brins de persil plat, 2 gousses d’ail, 4 cuillères à soupe d’huile d’olive",
+"Préchauffez le four à 200°C. Nettoyez les champignons, retirez la queue. Hachez les noisettes grossièrement, pressez l’ail, hachez le persil. Mélangez le tout avec l’huile d’olive et le parmesan râpé. Poivrez généreusement. Déposez les champignons sur une plaque, salez légèrement et remplissez la cavité de farce. Enfournez 20 minutes, en surveillant la coloration.",
+"Imagesrecettes/25.jpg"
+],[
+"Plats",
+"Accompagnements",
+"Carottes rôties à la feta ",
+"Préparation : 25 minutes, Cuisson : 30 minutes, Pour 4 personnes",
+"1 botte de carottes, 4 branches de thym, 4 gousses d’ail , 120 g de feta, 5 brins de coriandre",
+"Préchauffez le four à 180°C. Retirez les fanes des carottes et les gratter. Les rincer et les sécher. Les déposer sur une plaque recouverte de papier sulfurisé avec les gousses d’ail entières non pelées. Arrosez avec 3 cuillères à soupe d’huile d’olive, salez et poivrez. Parsemez le thym. Enfournez 30 minutes environ. Mélanger de temps à autre. Servir avec la feta émiettée et un peu de coriandre hachée.",
+"Imagesrecettes/27.jpg"
+],
+
+
+
+[
+"Plats",
+"Accompagnements",
+"Pate oignon et olive",
+"Préparation : 20 minutes, Cuisson : 30 minutes, Pour 4 personnes",
+"350g de pâtes courtes, 2 oignons rouges, 4 anchois, 1 cuillère à soupe vinaigre de vin rouge, 1 cuillère à soupe de sucre , 100 g d’olives noires",
+"Émincez les oignons. Les faires fondre sans coloration dans 2 cuillères à soupe d’huile d’olive pendant 5 minutes. Ajoutez le sucre et le vinaigre et faire compoter 10-15 minutes. Ajoutez les anchois et les olives, laissez cuire 2 minutes. Poivrez. Faites cuire les pâtes al dente dans une casserole d’eau bouillante salée pendant 9 minutes environ. Les égoutter et servir avec les oignons aux olives et du parmesan râpé. Arroser d’un trait d’huile d’olive.",
+"Imagesrecettes/28.jpg"
+],
+
+
+[
+"Plats",
+"Accompagnements",
+"Pâte champignons épinards",
+" Préparation : 15 minutes , Cuisson : 15 minutes, Pour 4 personnes",
+"250 g de torsades, 300 g de champignons de Paris, 1 poireau, 4 gousses d’ail, 150 g de comté, 200 g d’épinard",
+"Nettoyez les légumes. Retirez la tige dure des épinards, émincez l’ail, les champignons et le poireau. Dans une grande sauteuse, mettez tous les ingrédients sauf le comté. Ajouter un peu de sel et 70 cl d’eau. Poivrez. Portez à ébullition. Baissez le feu et faites cuire 12 à 15 minutes en remuant régulièrement. Rectifiez l’assaisonnement. Servir avec le comté râpé.",
+"Imagesrecettes/29.jpg"
+],
+
+
+
+[
+"Plats",
+"Quiches-tartes",
+"Quiche ricotta épinards",
+"Préparation : 20 minutes, Cuisson : 40 minutes, Pour 4 personnes",
+"1 rouleau de pâte brisée, 200 g de ricotta, 20 cl de lait entier, 45 g de parmesan,3 œufs, 100 g de pousses d’épinard",
+"Foncez un moule à tarte avec la pâte brisée, la piquer avec une fourchette et placez 30 minutes au réfrigérateur. Faites fondre les 3-4 des épinards dans 1 cuillère à soupe d’huile d’olive pendant 2 minutes. Salez et poivrez. Préchauffez le four à 200°C. Fouettez légèrement les œufs, ajoutez la ricotta, le lait, le parmesan râpé et les épinards. Salez et poivrez. Versez sur le fond de tarte, ajoutez le reste d’épinards et enfournez 40 minutes environ. Baissez la température à 180°C si nécessaire. ",
+"Imagesrecettes/30.jpg"
+], [
+"Plats",
+"Quiches-tartes",
+"Galette de pommes de terre",
+"Préparation : 20 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"200 g de pommes de terre, 1 rouleau de pâte feuilletée, 2 cuillères à soupe d’huile d’olive, 1 branche de romarin , 100 g de fromage bleu",
+"Préchauffez le four à 210°C. Étaler la pâte feuilletée de manière à obtenir un rectangle. Placez au réfrigérateur. Pelez les pommes de terre et coupez-les en tranches très fines. Les rincer et les éponger. Les ranger sur la pâte, saler, poivrer, arroser d’huile d’olive et parsemer de romarin. Enfournez 20 minutes environ, servir avec du fromage.",
+"Imagesrecettes/31.jpg"
+],
+
+
+[
+"Plats",
+"Quiches-tartes",
+"Tarte aux carottes",
+"Préparation : 25 minutes, Cuisson : 40 minutes, Pour 8 personnes",
+"100 g de farine complète, 100 g de farine blanche, 70 g de margarine , 500 g de carottes, 3 œufs, 20 cl de lait demi-écrémé, 150 g de tomme de Savoie , 1 gros oignon pelé et émincé, 1 bouillon de cube, A cuillère à café de cumin en poudre",
+"Dans un saladier, mélangez les deux farines avec 1 pincée de sel. Ménagez un puits au centre et mettez-y la margarine. Mélangez le tout du bout des doigts et incorporez 8 cl d’eau. Formez une boule de pâte homogène, sans trop la malaxer. Laissez-la reposer le temps de poursuivre la recette. Pelez les carottes, lavez-les, puis coupez-les en rondelles. Chauffer l’huile dans une sauteuse et faites-y suer l’oignon avec un peu de sel pendant 5 minutes environ : il ne doit pas colorer. Ajoutez les rondelles de carotte, 1 verre d’eau et le demi-cube de bouillon. Couvrez si besoin et laissez cuire jusqu’à ce que les carottes soient bien tendres, soit 10 à 15 minutes. Égouttez le contenu de la sauteuse et mettez dans le bol d’un Blender. Cassez-y les œufs, puis ajoutez le lait, la tomme coupée en cubes et le cumin. Mixez le tout. Préchauffez le four à 180°C. Étalez la pâte et déposez-la dans un moule à tarte anti-adhésif de 24 cm de diamètre. Versez la purée de carottes dessus et enfournez pour 30 minutes environ. Servez chaud.",
+"Imagesrecettes/32.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"Bolognaise Vegan ",
+"Préparation : 5 minutes. Cuisson : 15 minutes. Pour 4 personnes ",
+"250g de spaghetti, 1 oignon, 4 gousses d’ail, 400 g de tomates concassées ,200 g d’haché végétal ,3 brins de thym",
+"Ciseler l’oignon, presser l’ail.Dans une grande sauteuse, mettre les spaghettis, l’oignon, l’ail, la tomate, le thym et le haché végétal. Ajouter 70 cl d’eau et un peu de sel. Poivrez. Portez à ébullition, baissez le feu et cuire 12 minutes en remuant régulièrement. Rectifiez l’assaisonnement si besoin. ",
+"Imagesrecettes/33.jpg"
+],[
+"Plats",
+"Veggie",
+"Steak de céléri-rave sauce aux tomates vertes",
+"Préparation : 10 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"2 petits céléris-raves, 2 tomates vertes ,1 petit piment serrano  ,1 gousses d’ail  ,10 g de coriandre ,1 oignon  ,1 cuillère d’huile d’olive, Huile de coco",
+"Mélangez dans un bol les tomates coupées en morceaux avec le piment, l’ail, la coriandre et l’oignon émincés. Versez l’huile d’olive, assaisonnez, mélangez et réservez. Pelez et coupez les céleris-raves en tranches, salez et poivrez. Préchauffez le gril du four. Dans une poele faites chauffer un peu d’huile de coco et faites cuire les steaks de céleri-rave jusqu’à ce qu’ils dorent, 4 minutes par côté environ. Transférez dans le four pour 5 à 10 minutes jusqu’à ce que les morceaux soient tendres. Servez avec la sauce de tomates vertes.",
+"Imagesrecettes/34.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"Soupe miso aux soba ",
+"Préparation : 10 minutes, Cuisson : 10 minutes, Pour 4 personnes",
+"50 g de pâte miso , 400 g de nouilles soba , 2l d’eau , Le jus d’un citron vert, 4 cm de gingembre , 1 tige de citronnelle",
+"Portez à ébullition l’eau. Hachez la citronnelle. Ajoutez le gingembre épluché et haché, la citronnelle et le jus de citron vert. Laissez infuser le mélange pendant 10 minutes à feu très doux. Délayez la pâte miso dans le bouillon. Faites cuire dans le bouillon les nouilles soba, le temps indiqué sur l’emballage. Servez aussitôt. ",
+"Imagesrecettes/11.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"One-pot pasta aux légumes verts",
+"Préparation : 10 minutes, Cuisson : 3 minutes (hors cuisson des pâtes), Pour 4 personnes ",
+"300g de pâte au quinoa, 300 g d’asperges, 300 g de petits pois, 4 cuillères à soupe d’huile d’olive, 3 cuillères à café de câpres, 10 g de menthe, Sel",
+"Faites bouillir un grand volume d’eau salée pour les pâtes. Pendant ce temps nettoyez et coupez les asperges en trois, retirez les petits pois du congélateur. Émincez la menthe. Versez les pâtes dans l’eau bouillante et 3 minutes avant la fin du temps de cuisson indiqué sur l’emballage, ajoutez les asperges et les petits pois. Faites cuire 3 minutes, égouttez et remettez le tout dans la casserole. Ajoutez l’huile d’olive et parsemez de zestes de citron, de câpres et de menthe ciselée. Assaisonnez, mélangez et servez. ",
+"Imagesrecettes/35.jpg"
+],
+
+
+[
+"Plats",
+"Veggie",
+"Tomates farcies",
+"Préparation : 20 minutes, Cuisson : 1 heure, Pour 4 personnes",
+"8 tomates, 200g de quinoa, 1 oignon, 1 gousse d’ail, 3 brins de thym, 100 g de feta",
+"Rincez le quinoa et faites-le cuire 10 minutes dans de l’eau bouillante. Égouttez. Préchauffez le four à 180°C. Coupez le chapeau des tomates. Les évider. Hachez la chair. Émincer l’oignon. Hachez l’ail. Faites revenir l’oignon et l’ail 5 minutes dans 3 cuillères à soupe d’huile d’olive. Ajoutez la chair des tomates, le thym, salez et poivrez. Faites cuire 10 minutes. Ajoutez la feta. Garnissez les tomates de ce mélange, posez les chapeaux, arrosez d’huile d’olive et enfournez 30-45 minutes.",
+"Imagesrecettes/24.jpg"
+],[
+"Plats",
+"Veggie",
+"Champignons farcis",
+"Préparation : 20 minutes, Cuisson : 20 minutes, Pour 4 personnes",
+"20 moyens champignon de Paris, 60 g de noisettes, 60 g de parmesan, 6 brins de persil plat, 2 gousses d’ail, 4 cuillères à soupe d’huile d’olive",
+"Préchauffez le four à 200°C. Nettoyez les champignons, retirez la queue. Hachez les noisettes grossièrement, pressez l’ail, hachez le persil. Mélangez le tout avec l’huile d’olive et le parmesan râpé. Poivrez généreusement. Déposez les champignons sur une plaque, salez légèrement et remplissez la cavité de farce. Enfournez 20 minutes, en surveillant la coloration.",
+"Imagesrecettes/25.jpg"
+], [
+"Plats",
+"Veggie",
+"Chou-fleur rôti",
+"Préparation : 10 minutes, Cuisson : 1h15, Pour 4 personnes",
+"1 ou 2 choux fleurs, 4 gousses d’ail, 4 branches de thym, 1 cuillère à soupe de paprika, 6 cuillères à soupe d’huile d’olive",
+"Retirer les feuilles extérieures du chou-fleur. Lavez le chou-fleur. Écrasez les gousses d’ail avec le paprika et 3 cuillères à soupe d’huile d’olive. Salez et poivrez. Badigeonnez le chou-fleur de cette pâte. Le mettre dans une cocotte, couvrez et faites cuire 1 heure à 180°C. Retirez le couvercle 10 minutes avant la fin de la cuisson. Arrosez d’huile d’olive et servir.",
+"Imagesrecettes/26.jpg"
+], [
+"Plats",
+"Veggie",
+"Carottes rôties à la feta ",
+"Préparation : 25 minutes, Cuisson : 30 minutes, Pour 4 personnes",
+"1 botte de carottes, 4 branches de thym, 4 gousses d’ail, 120 g de feta, 5 brins de coriandre",
+"Préchauffez le four à 180°C. Retirez les fanes des carottes et les gratter. Les rincer et les sécher. Les déposer sur une plaque recouverte de papier sulfurisé avec les gousses d’ail entières non pelées. Arrosez avec 3 cuillères à soupe d’huile d’olive, salez et poivrez. Parsemez le thym. Enfournez 30 minutes environ. Mélanger de temps à autre. Servir avec la feta émiettée et un peu de coriandre hachée.",
+"Imagesrecettes/27.jpg"
+], [
+"Desserts",
+"Gateaux",
+"Gâteau au yaourt au thé vert",
+"Préparation : 20 minutes, Cuisson : 40 minutes, Pour 6 à 8 personnes",
+"100g de yaourt entier, 3 œufs,300g de farine , 120g de beurre, 220g de sucre en poudre, 1 sachet de levure chimique , 1 cuillère à café de thé vert matcha",
+"Couper le beurre en morceaux dans un saladier et laissez-le ramollir. Préchauffez le four à 210°C. Beurrez un moule à cake de 26 cm de long ou préparez un moule en silicone. Incorporez le sucre, les œufs, le yaourt au beurre mou, en fouettant au batteur électrique jusqu’à homogénéité. Ajoutez la farine, la levure et le thé vert. Remuez jusqu’à ce que la pâte soit bien lisse. Versez la pâte dans le moule et enfournez 40 minutes environ. Démoulez le gâteau encore chaud sur une grille et laissez-le refroidir.",
+"Imagesrecettes/36.jpg"
+],
+
+
+
+[
+"Desserts",
+"Gateaux",
+"Fondants aux marrons",
+"Préparation : 10 minutes, Cuisson : 20-25 minutes, Pour 6 à 8 personnes",
+"300g de crème de marrons, 80g de beurre, 2 œufs, 4 cuillères à café de fécule",
+"Préchauffez le four à 150°C. Beurrez un moule carré de 20 cm, puis tapissez le de papier sulfurisé. Mettez le beurre et la crème de marrons dans une petite casserole et faites chauffer à feu doux, sans cesser de remuer, jusqu’à l’obtention d’un mélange homogène. Ôter du feu, puis incorporez les œufs et la fécule en fouettant vivement. Versez la pâte dans le moule et lissez la surface à la spatule. Enfournez 20 à 25 minutes. Vérifiez la cuisson du gâteau avec la pointe d’un couteau. Démoulez-le délicatement sur une grille et laissez-le refroidir.",
+"Imagesrecettes/37.jpg"
+],
+
+
+
+
+[
+"Desserts",
+"Tartes",
+"Tarte au sucre",
+"Préparation : 20 minutes, Repos : 2 heures, Cuisson : 25-30 minutes, Pour 4 personnes ",
+"150g de farine , 90g de beurre, 10 cl de crème liquide, 10g de sucre en poudre , 1 œuf + 1 jaune délayé dans un peu de lait , 7g de levure de boulanger, 80g de cassonade , 1 pincée de sel",
+"Délayez la levure dans 5 cl d’eau tiède. Faites fondre 60g de beurre à feu doux dans une petite casserole et laissez-le refroidir. Battez l’œuf entier dans un bol. Mettez la farine et le sel dans un saladier et ménagez un puits au centre. Versez-y l’œuf battu, puis ajoutez le beurre fondu et la levure délayée. Mélangez et travaillez la pâte jusqu’à ce qu’elle soit homogène et souple. Couvrez la pâte avec un linge et laissez-la lever 1h à température ambiante. Beurrez un moule à manquer de 22 cm de diamètre ou préparez un moule en silicone. Pétrissez de nouveau rapidement la pâte puis, sur le plan de travail fariné, étalez-la en un disque de même diamètre que le moule. Garnissez-en le fond et laissez lever encore 1h : la pâte doit doubler de volume. Préchauffez le four à 180°C. Faites fondre le reste de beurre et mélangez-le avec la cassonade et la crème. Étalez le tout sur la pâte. Enfournez pour 25 à 30 minutes : la tarte doit être légèrement caramélisée. Astuce : Pour que la pâte lève plus rapidement, laissez-la reposer dans un endroit tiède.",
+"Imagesrecettes/38.jpg"
+], [
+"Desserts",
+"Tartes",
+"Tarte aux myrtilles ",
+"Préparation : 20 minutes, Cuisson : 35 à 40 minutes, Pour 6 personnes",
+"1 pâte brisée pré étalée, 300 g de myrtilles, 3 œufs, 120 g de sucre en poudre, 120 g d’amandes en poudre, 50 g de maïzena , 3 gouttes de jus de citron",
+"Garnissez un moule à tarte de 24 cm de diamètre avec la pâte en conservant le papier sulfurisé. Découpez l’excédent de pâte et piquez le fond avec une fourchette. Placez au réfrigérateur le temps de préparer la garniture. Préchauffez le four à 180°C. Cassez les œufs dans deux saladiers en séparant les blancs des jaunes. Fouettez les jaunes avec le sucre jusqu’à ce que le mélange blanchisse puis, sans cesser de fouetter, ajoutez la poudre d’amande et la Maïzena. Battez les blancs en neige ferme avec le jus de citron, puis incorporez les délicatement aux jaunes. Ajoutez les myrtilles. Versez la préparation sur le fond de tarte et enfournez pour 35-40 minutes. Laissez tiédir la tarte et démoulez-la sur une grille. Servez froid.",
+"Imagesrecettes/39.jpg"
+],
+
+
+
+[
+"Desserts",
+"Sorbets-Glaces",
+"Sorbet de fruits exotiques aux agrumes",
+"Préparation : 20 minutes, Congélation : 2h, Pour 4 personnes",
+"1 banane moyenne, 2 fruits de la Passion , 150 g de chair de mangue , 150 g de chair d’ananas frais, Le jus de 1 citron , 100 g de sucre glace , 10 cl de jus d’orange frais",
+"Dans une petite casserole, mélangez le jus d’orange et le sucre glace jusqu’à complète dissolution de ce dernier. Portez à ébullition jusqu’à l’obtention d’un sirop léger, puis ôtez du feu et laissez refroidir. Coupez les fruits de la Passion en deux et prélevez leur pulpe à l’aide d’une petite cuillère. Mettez-la dans une passoire fine posée au-dessus d’un bol et pressez fortement avec le dos d’une cuillère pour recueillir leur jus. Pelez la banane et coupez-la en morceaux, ainsi que la mangue d’ananas. Mixez les fruits avec le jus de citron. Incorporez le sirop refroidi à la purée de fruits, puis le jus des fruits de la Passion. Versez la préparation dans une sorbetière et faites prendre 2h au congélateur.",
+"Imagesrecettes/40.jpg"
+],
+
+
+
+[
+"Desserts",
+"Sorbets-Glaces",
+"Glace au lait d’amandes",
+"Préparation : 20 minutes, Infusion : 15 minutes, Cuisson : 10-15 minutes, Congélation : 2 heures. Pour 4 personnes",
+"40 cl de lait entier, 10 cl de crème liquide, 6 jaunes d’œuf, 60 g d’amandes en poudre, 3 ou 4 gouttes d’extrait d’amande amère, 60 g de sucre en poudre",
+"Dans une casserole, chauffez le lait et la crème jusqu’à ce que la température soit juste supportable au doigt. Ajoutez la poudre d’amandes et l’extrait d’amande amère. Couvrez et laissez infuser 15 minutes. Puis portez à ébullition. Dans un saladier, fouettez les jaunes d’œuf avec le sucre jusqu’à ce que le mélange blanchisse. Délayez avec le lait d’amande bouillant, en remuant avec une cuillère en bois, puis reversez le tout dans la casserole. Faites épaissir à feu doux, sans cesser de remuer, 10 à 15 minutes : vous devez obtenir une crème onctueuse, qui nappe la cuillère. Ôtez-la du feu et versez-la dans un saladier en la filtrant à travers une passoire fine. Laissez refroidir, en mélangeant de temps en temps pour éviter la formation d’une pellicule en surface. Puis versez la crème dans une sorbetière et faites prendre 2h au congélateur.",
+"Imagesrecettes/41.jpg"
+],
+
+
+
+[
+"Desserts",
+"Sorbets-Glaces",
+"Granité à la menthe",
+"Préparation : 10 minutes, Congélation : 2h , Pour 4 personnes",
+"50 cl d’eau , 1 bouquet de menthe fraiche , 1 cuillère à soupe de liqueur de menthe , 120 g de sucre en poudre",
+"Dans une casserole mélangez l’eau et le sucre jusqu’à complète dissolution de ce dernier. Portez à ébullition jusqu’à l’obtention d’un sirop, puis ôtez du feu et ajoutez le bouquet de menthe lavé et égoutté. Couvrez et laissez infuser jusqu’à complet refroidissement, soit 1h environ. Filtrez la préparation à travers une passoire fine et jetez la menthe. Ajoutez la liqueur. Versez le tout dans un grand plat et mettez au congélateur. Lorsque la préparation a épaissi, sortez le plat du congélateur, grattez la surface avec une fourchette pour former des petits cristaux puis remettez au congélateur. Renouvelez l’opération tous les quarts d’heure. Au moment de servir grattez une dernière fois la surface à la fourchette pour bien détacher les paillettes du granité et répartissez le dans 4 verres.",
+"Imagesrecettes/42.jpg"
+],[
+"Desserts",
+"Autres",
+"Mousses de poire au gingembre confit",
+"Préparation : 20 minutes, Réfrigération : 2h minimum, Cuisson : 5 minutes, Pour 4 personnes",
+"2 grosses poires (comices ou williams), Le jus de 1 citron, 2 blancs d’œuf, 1 cuillère à soupe de gingembre confit, 1 cuillère à soupe de gélatine en poudre, 1 pincée de sel, 50 g de sucre en poudre, 50 cl d’eau",
+"Hachez le gingembre confit aussi finement que possible. Lavez et pelez les poires. Coupez-es en quatre. Arrosez-les aussitôt du jus du citron pour éviter que la chair se noircisse. Dans une casserole, mélangez l’eau et le sucre jusqu’à complète dissolution de ce dernier. Portez à ébullition jusqu’à l’obtention d’un sirop, puis plongez-y les quartiers de poire. Laissez cuire 5 min à petits feu : la chair doit rester ferme. Égouttez-les à l’aide d’une écumoire et épongez-les sur du papier absorbant. Mixez les poires encore chaudes en purée. Saupoudrez la gélatine en surface, ajoutez le gingembre confit haché et mélangez bien. Laissez tiédir. Battez les blancs en neige très ferme avec le sel, puis incorporez-les délicatement à la purée de poires, en soulevant la masse de bas en haut. Répartissez la préparation dans 4 coupes et réservez au moins 2h au réfrigérateur avant de servir.",
+"Imagesrecettes/43.jpg"
+],
+
+
+
+[
+"Desserts",
+"Autres",
+"Gaufres",
+"Préparation : 20 minutes, Repos : 2 heures, Cuisson : 3-4 minutes par gaufre, Pour 10 gaufres",
+"250 g de farine, 2 œufs, 35 cl de lait, 70 g de beurre fondu, 30 g de sucre en poudre, 1 sachet de levure chimique, 1 pincée de sel, Huile pour le gaufrier",
+"Dans un saladier, battez les œufs en omelette avec le sucre en poudre et le sel. Mélangez la farine et la levure dans un saladier et ménagez un puits au centre. Versez-y les œufs battus, puis délayez avec le lait et le beurre fondu, sans cesser de remuer avec une cuillère en bois, jusqu’à l’obtention d’une pâte lisse. Couvrez et laissez reposer au moins 2h à température ambiante. Faites chauffer le gaufrier et enduisez-le légèrement d’huile sur ses deux faces. Versez 1 petite louchée de pâte dans la moitié inférieure de chaque moule et répartissez la dans toutes les alvéoles en inclinant doucement l’appareil dans tous les sens. Laissez cuire environ 2 minutes de chaque côté, puis démoulez délicatement. Saupoudrez de sucre glace et servez aussitôt. Poursuivez de même pour le reste de la pâte.",
+"Imagesrecettes/44.jpg"
+],
+
+
+[
+"Desserts",
+"Autres",
+"Tiramisu",
+"Préparation : 25 minutes, Réfrigération : 3-12h, Pour 6 personnes",
+"300g de mascarpone, 4 œufs, 20cl d’expresso très fort, 1 boite de biscuits à la cuillère, 80 g de sucre en poudre, Cacao en poudre",
+"Versez le café dans une assiette creuse. Trempez-y rapidement la moitié des biscuits. Disposez-les au fur et à mesure dans 6 coupes ou dans le fond d’un plat assez haut. Cassez les œufs dans deux saladiers en séparant les blancs des jaunes. Fouettez les jaunes avec le sucre jusqu’à ce que le mélange blanchisse et soit bien mousseux. Ajouter le mascarpone, en fouettant vivement, jusqu’à l’homogénéité.  Fouettez les blancs enneige ferme, puis incorporez-les délicatement à la crème au mascarpone, en soulevant la masse de bas en haut. Étalez la moitié de la préparation sur les biscuits. Trempez le reste de biscuits dans le café et disposé les au fur et à mesure dans les coupelles, sur la première couche de crème. Recouvre-les du reste de crème et réservez au réfrigérateur au moins 3 heures. Saupoudrez de cacao pour servir.",
+"Imagesrecettes/45.jpg"
+],
+
+[
+"Desserts",
+"Veggie",
+"Brownie cru ",
+"Préparation : 10 minutes, Réfrigération : 1 nuit, Pour 4 à 6 personnes",
+"200 g de dattes, 150 g de noix, 90 g d’amandes, 50 g de poudre de cacao cru ",
+"Déposez les noix dans un mixeur et mixez puis ajoutez le cacao, un peu de sel puis les dattes dénoyautées une par une. Transférez dans un moule cette préparation et les amandes grossièrement hachées. Étalez bien en pressant avec les mains. Placez au réfrigérateur pendant une nuit.",
+"Imagesrecettes/46.jpg"
+],
+
+
+[
+"Desserts",
+"Veggie",
+"Mousses de poire au gingembre confit",
+"Préparation : 20 minutes, Réfrigération : 2h minimum, Cuisson : 5 minutes, Pour 4 personnes",
+"2 grosses poires (comices ou williams), Le jus de 1 citron, 2 blancs d’œuf, 1 cuillère à soupe de gingembre confit, 1 cuillère à soupe de gélatine en poudre, 1 pincée de sel, 50 g de sucre en poudre, 50 cl d’eau",
+"Hachez le gingembre confit aussi finement que possible. Lavez et pelez les poires. Coupez-es en quatre. Arrosez-les aussitôt du jus du citron pour éviter que la chair se noircisse.Dans une casserole, mélangez l’eau et le sucre jusqu’à complète dissolution de ce dernier. Portez à ébullition jusqu’à l’obtention d’un sirop, puis plongez-y les quartiers de poire. Laissez cuire 5 min à petits feu : la chair doit rester ferme. Égouttez-les à l’aide d’une écumoire et épongez-les sur du papier absorbant. Mixez les poires encore chaudes en purée. Saupoudrez la gélatine en surface, ajoutez le gingembre confit haché et mélangez bien. Laissez tiédir. Battez les blancs en neige très ferme avec le sel, puis incorporez-les délicatement à la purée de poires, en soulevant la masse de bas en haut. Répartissez la préparation dans 4 coupes et réservez au moins 2h au réfrigérateur avant de servir.",
+"Imagesrecettes/43.jpg"
+], [
+"Boissons",
+"Autres",
+"Boisson pommes et épices",
+"Pour 1 personne",
+"1 pomme, 1 poignée de myrtilles, 1 tasse de lait d’amande, 1 cuillère à soupe d’avoine, 1 cuillère à café de cannelle, 5 noix, 1 cuillère à café de graines de chia, Glace, 1 pincée de muscade",
+"Ajoutez tous les ingrédients sauf la noix de muscade dans votre grand gobelet et mixez pendant 30 secondes. Mélangez avec la muscade. Dégustez !",
+"Imagesrecettes/47.jpg"
+],
+
+
+[
+"Boissons",
+"Cocktails",
+"Le Rock’n’roll",
+"Pour 1 personne",
+"La moitié d’un grand gobelet de chou, 4 brins de persil frais , La moitié concombre, lavé ou pelé, 2 tiges de céleri, coupées, La moitié d’une poire, 1 morceau de racine de gingembre, le zeste retiré, 1 cuillère à soupe de vinaigre de cidre , De l’eau",
+"Ajoutez tous les ingrédients dans le grand gobelet et mixez jusqu’à consistance lisse (environ 45 secondes).",
+"Imagesrecettes/48.jpg"
+],
+
+
+[
+"Boissons",
+"Smoothies",
+"Smoothie aux figues et au beurre d’amande",
+"Préparation : 5 minutes",
+"15 cl de lait d’amande, 4 figues, 1 cuillère à soupe de beurre d’amande, 1 banane, 1 pincée, de cannelle en poudre",
+"Versez dans un Blender le lait d’amande puis déposez la banane coupée en morceaux et les figues lavées. Ajoutez le beurre d’amande puis la cannelle en poudre. Mixez jusqu’à l’obtention d’un liquide homogène.",
+"Imagesrecettes/49.jpg"
+],
+
+
+[
+"Boissons",
+"Smoothies",
+"Smoothie au matcha et au gingembre",
+"Préparation : 5 minutes",
+"1 cuillère à café de thé vert matcha, 2 cm de gingembre, 20 cl de lait d’amande, 30 g d’épinards, 1 banane, Jus de citron",
+"Déposez dans un Blender le thé vert matcha, le lait d’amande, le gingembre râpé, le jus de citron et les épinards. Ajoutez la banane et mixez jusqu’à l’obtention d’un liquide homogène.",
+"Imagesrecettes/50.jpg"
+]
+];
+
+	function remove(){
+		var div = document.getElementById('randomrecipe')
+		while (div.hasChildNodes()) {
+			div.removeChild(div.lastChild);
+		}
+	}
+
+	function random(data){
+		remove()
+		var randomrecipe = document.getElementById("randomrecipe")
+		var random = Math.floor(Math.random()*(data.length))
+
+		var img = document.createElement("img");
+	    img.src = data[random][6]
+	    randomrecipe.appendChild(img)	
+
+		var h1 = document.createElement('h1')
+		var titre = document.createTextNode(data[random][2])
+		h1.appendChild(titre)
+
+		var strong = document.createElement('strong')
+		var instructions = document.createTextNode(data[random][3])
+		strong.appendChild(instructions)
+
+		var p1 = document.createElement('p')
+		var ingredients = document.createTextNode(data[random][4])
+		p1.appendChild(ingredients)
+
+		var p2 = document.createElement('p')
+		var etapes = document.createTextNode(data[random][5])
+		p2.appendChild(etapes)
+		
+		randomrecipe.appendChild(h1)
+		randomrecipe.appendChild(strong)
+		randomrecipe.appendChild(p1)
+		randomrecipe.appendChild(p2)
+	}
+
+	//CREER RECETTE
+	function create_recipes(data, compteur){
+    var tartes = document.getElementById("dessertstartes")
+    var gateaux = document.getElementById("dessertsgateaux")
+    var glaces = document.getElementById("dessertsglaces")
+    var veggie = document.getElementById("dessertsveggie")
+    var autres = document.getElementById("dessertsautres")
+
+    var div = document.createElement("div")
+
+    var img = document.createElement("img");
+    img.src = data[compteur][6]
+    div.appendChild(img)
+
+    var h1 = document.createElement("h1")
+    var name = document.createTextNode(data[compteur][2])
+    h1.appendChild(name)
+
+    var strong = document.createElement("strong")
+    var informations = document.createTextNode(data[compteur][3])
+    strong.appendChild(informations)
+
+    var p1 = document.createElement("p")
+    var ingredients = document.createTextNode(data[compteur][4])
+    p1.appendChild(ingredients)
+
+    var p2 = document.createElement("p")
+    var etapes = document.createTextNode(data[compteur][5])
+    p2.appendChild(etapes)
+
+    div.appendChild(h1)
+    div.appendChild(strong)
+    div.appendChild(p1)
+    div.appendChild(p2)
+
+    if(data[compteur][1]=="Tartes"){
+    	tartes.appendChild(div)
+    } else if(data[compteur][1]=="Gateaux"){
+    	gateaux.appendChild(div)
+    } else if(data[compteur][1]=="Sorbets-Glaces"){
+    	glaces.appendChild(div)
+    } else if(data[compteur][1]=="Veggie"){
+    	autres.appendChild(div)
+    } else if(data[compteur][1]=="Autres"){
+    	autres.appendChild(div)
+    }
+  }
+
+	//FILTRER RECETTE PAR CATEGORIE
+	function desserts(data,compteur){
+		if (data[compteur][0]=="Desserts") {
+			create_recipes(data, compteur)
+		}
+	}
+
+	//AFFICHAGE DES RECETTES
+	function affichage_recipes(data){
+		for (var i = 0; i<data.length;i++){
+			desserts(data,i)
+	    }
+	}
+
+	// FILTRE DES RECETTES
+	function filterbyCheckbox(id1, id2, id3, id4, id5){
+ 		var boxtartes = document.getElementById(id1)
+ 		var boxgateaux = document.getElementById(id2)
+ 		var boxglaces = document.getElementById(id3)
+ 		var boxveggie = document.getElementById(id4)
+ 		var boxautres = document.getElementById(id5)
+
+ 		var tartes = document.getElementById("dessertstartes")
+ 		var gateaux = document.getElementById("dessertsgateaux")
+ 		var glaces = document.getElementById("dessertsglaces")
+ 		var veggie = document.getElementById("dessertsveggie")
+ 		var autres = document.getElementById("dessertsautres")
+
+ 		if (boxtartes.checked==false && boxgateaux.checked==false && boxglaces.checked==false && boxveggie.checked==false && boxautres.checked==false){
+ 			tartes.style.display = "block"
+ 			gateaux.style.display = "block"
+ 			glaces.style.display = "block"
+ 			veggie.style.display = "block"
+ 			autres.style.display = "block"
+ 		}
+
+ 		if (boxtartes.checked){
+ 			tartes.style.display = "block"
+ 			gateaux.style.display = "none"
+ 			glaces.style.display = "none"
+ 			veggie.style.display = "none"
+ 			autres.style.display = "none"
+ 		}
+
+ 		if (boxgateaux.checked){
+ 			tartes.style.display = "none"
+ 			gateaux.style.display = "block"
+ 			glaces.style.display = "none"
+ 			veggie.style.display = "none"
+ 			autres.style.display = "none"
+ 		}
+
+ 		if (boxglaces.checked){
+ 			tartes.style.display = "none"
+ 			gateaux.style.display = "none"
+ 			glaces.style.display = "block"
+ 			veggie.style.display = "none"
+ 			autres.style.display = "none"
+ 		}
+
+ 		if (boxveggie.checked){
+ 			tartes.style.display = "none"
+ 			gateaux.style.display = "none"
+ 			glaces.style.display = "none"
+ 			veggie.style.display = "block"
+ 			autres.style.display = "block"
+ 		}
+
+ 		if (boxautres.checked){
+ 			tartes.style.display = "none"
+ 			gateaux.style.display = "none"
+ 			glaces.style.display = "none"
+ 			veggie.style.display = "none"
+ 			autres.style.display = "block"
+ 		}
+	}
+</script>
+</body>
